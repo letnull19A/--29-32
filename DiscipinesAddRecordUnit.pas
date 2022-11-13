@@ -1,0 +1,51 @@
+unit DiscipinesAddRecordUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB,
+  Vcl.Grids, Vcl.DBGrids, Data.Win.ADODB, Vcl.Menus;
+
+type
+  TForm8 = class(TForm)
+    DBNavigator1: TDBNavigator;
+    Content: TPanel;
+    Footer: TPanel;
+    ADOConnection2: TADOConnection;
+    ADODataSet1: TADODataSet;
+    DataSource1: TDataSource;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    DBGrid1: TDBGrid;
+    procedure N1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form8: TForm8;
+
+implementation
+
+{$R *.dfm}
+
+uses DisciplinesUnit;
+
+procedure TForm8.FormShow(Sender: TObject);
+begin
+  ADODataSet1.Active := false;
+  ADODataSet1.Active := true;
+end;
+
+procedure TForm8.N1Click(Sender: TObject);
+begin
+  Hide();
+  Form4.Show();
+end;
+
+end.

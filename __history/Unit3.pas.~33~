@@ -1,0 +1,116 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB,
+  Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids, Vcl.Menus, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm3 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    ADODataSet1: TADODataSet;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    ADOConnection2: TADOConnection;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N051: TMenuItem;
+    N031: TMenuItem;
+    N9: TMenuItem;
+    N10: TMenuItem;
+    N11: TMenuItem;
+    N12: TMenuItem;
+    N13: TMenuItem;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Button1: TButton;
+    BitBtn1: TBitBtn;
+    procedure N2Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+    procedure N051Click(Sender: TObject);
+    procedure N031Click(Sender: TObject);
+    procedure N9Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit1;
+
+procedure TForm3.N031Click(Sender: TObject);
+begin
+  ADODataset1.Filtered := false;
+  ADODataset1.Filter := 'Mark < 5';
+  ADODataset1.Filtered := true;
+end;
+
+procedure TForm3.N051Click(Sender: TObject);
+begin
+  ADODataset1.Filtered := false;
+  ADODataset1.Filter := 'Mark > 2';
+  ADODataset1.Filtered := true;
+end;
+
+procedure TForm3.N2Click(Sender: TObject);
+begin
+  Form1.Show();
+  Form3.Close();
+end;
+
+procedure TForm3.N5Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Tasks ORDER BY StudentId DESC;';
+  ADODataset1.Open();
+end;
+
+procedure TForm3.N6Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Tasks ORDER BY StudentId ASC;';
+  ADODataset1.Open();
+end;
+
+procedure TForm3.N7Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Tasks ORDER BY Id DESC;';
+  ADODataset1.Open();
+end;
+
+procedure TForm3.N8Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Tasks ORDER BY Id ASC;';
+  ADODataset1.Open();
+end;
+
+procedure TForm3.N9Click(Sender: TObject);
+begin
+  ADODataset1.Filtered := false;
+  ADODataset1.Filter := '';
+  ADODataset1.Filtered := true;
+end;
+
+end.

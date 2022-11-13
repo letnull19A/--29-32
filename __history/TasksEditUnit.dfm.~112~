@@ -1,0 +1,284 @@
+object Form11: TForm11
+  Left = 0
+  Top = 0
+  BorderStyle = bsSingle
+  Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1076#1072#1085#1080#1081
+  ClientHeight = 355
+  ClientWidth = 594
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 0
+    Top = 41
+    Width = 594
+    Height = 314
+    Align = alClient
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 26
+      Top = 33
+      Width = 80
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #1050#1086#1076' '#1079#1072#1076#1072#1085#1080#1103
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 35
+      Top = 87
+      Width = 71
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #1057#1083#1086#1078#1085#1086#1089#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 19
+      Top = 60
+      Width = 87
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #1050#1086#1076' '#1089#1090#1091#1076#1077#1085#1090#1072
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 59
+      Top = 197
+      Width = 47
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #1054#1094#1077#1085#1082#1072
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object DBText1: TDBText
+      Left = 120
+      Top = 35
+      Width = 98
+      Height = 17
+      DataField = 'Id'
+      DataSource = DataSource1
+    end
+    object Label5: TLabel
+      Left = 29
+      Top = 114
+      Width = 77
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #1044#1080#1089#1094#1080#1087#1083#1080#1085#1072
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 50
+      Top = 139
+      Width = 56
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #1055#1088#1077#1076#1084#1077#1090
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object DBText2: TDBText
+      Left = 120
+      Top = 139
+      Width = 98
+      Height = 50
+      DataField = 'Name'
+      DataSource = DataSource2
+      WordWrap = True
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 269
+      Width = 592
+      Height = 25
+      DataSource = DataSource1
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbEdit]
+      Align = alBottom
+      TabOrder = 0
+      OnClick = DBNavigator1Click
+    end
+    object DBComboBox1: TDBComboBox
+      Left = 120
+      Top = 195
+      Width = 41
+      Height = 21
+      DataField = 'Mark'
+      DataSource = DataSource1
+      Items.Strings = (
+        '0'
+        '1'
+        '2'
+        '3'
+        '4'
+        '5')
+      TabOrder = 1
+    end
+    object DBComboBox2: TDBComboBox
+      Left = 120
+      Top = 85
+      Width = 98
+      Height = 21
+      DataField = 'Difficulty'
+      DataSource = DataSource1
+      Items.Strings = (
+        #1051#1077#1075#1082#1086
+        #1053#1086#1088#1084#1072#1083#1100#1085#1086
+        #1057#1083#1086#1078#1085#1086
+        #1053#1077#1074#1086#1079#1084#1086#1078#1085#1086
+        #1057#1091#1087#1077#1088' '#1076#1091#1087#1077#1088' '#1089#1083#1086#1078#1085#1086
+        #1052#1077#1075#1072' '#1085#1077#1088#1077#1072#1083#1100#1085#1086
+        #1053#1077#1088#1077#1072#1083#1100#1085#1086
+        #1041#1086#1075)
+      TabOrder = 2
+    end
+    object DBComboBox3: TDBComboBox
+      Left = 120
+      Top = 58
+      Width = 98
+      Height = 21
+      DataField = 'StudentId'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object StatusBar1: TStatusBar
+      Left = 1
+      Top = 294
+      Width = 592
+      Height = 19
+      Panels = <
+        item
+          Text = #1047#1072#1087#1080#1089#1100': '
+          Width = 50
+        end>
+    end
+    object DBComboBox4: TDBComboBox
+      Left = 120
+      Top = 112
+      Width = 98
+      Height = 21
+      DataField = 'DisciplineId'
+      DataSource = DataSource1
+      Items.Strings = (
+        '3'
+        '6'
+        '7'
+        '8'
+        '9'
+        '11'
+        '12'
+        '13'
+        '14')
+      TabOrder = 5
+      OnChange = DBComboBox4Change
+    end
+    object DBImage1: TDBImage
+      Left = 280
+      Top = 33
+      Width = 289
+      Height = 227
+      DataField = 'Excitement'
+      DataSource = DataSource1
+      ParentShowHint = False
+      Proportional = True
+      ShowHint = False
+      Stretch = True
+      TabOrder = 6
+      OnClick = DBImage1Click
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 594
+    Height = 41
+    Align = alTop
+    TabOrder = 1
+  end
+  object MainMenu1: TMainMenu
+    Left = 72
+    Top = 325
+    object N1: TMenuItem
+      Caption = #1053#1072#1079#1072#1076
+      OnClick = N1Click
+    end
+    object N2: TMenuItem
+      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+      OnClick = N2Click
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADODataSet1
+    Left = 40
+    Top = 325
+  end
+  object ADODataSet1: TADODataSet
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    AfterScroll = ADODataSet1AfterScroll
+    CommandText = 'SELECT * FROM Tasks'
+    CommandTimeout = 0
+    Parameters = <>
+    Left = 8
+    Top = 325
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 104
+    Top = 328
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    CommandTimeout = 0
+    DataSource = DataSource1
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM Disciplines')
+    Left = 136
+    Top = 329
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOQuery1
+    Left = 168
+    Top = 329
+  end
+end

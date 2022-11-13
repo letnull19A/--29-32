@@ -1,0 +1,89 @@
+unit MainUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Data.DB, Data.Win.ADODB, System.ImageList, Vcl.ImgList,
+  Vcl.Menus, ShellAPI, Global;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label1: TLabel;
+    Button5: TButton;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    ADOConnection1: TADOConnection;
+    ImageList1: TImageList;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+Uses StudentsUnit, TasksUnit, DisciplinesUnit, GroupsUnit, ReportUnit;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form1.Hide();
+  Form2.Show();
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Form1.Hide();
+  Form3.Show();
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Form1.Hide();
+  Form4.Show();
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  Form1.Hide();
+  Form5.Show();
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  Form1.Hide();
+  Form6.Show();
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  ADOConnection1.Connected := true;
+end;
+
+procedure TForm1.N2Click(Sender: TObject);
+begin
+  ShellExecute(0, PChar('Open'), PChar('\help.chm'), nil, nil, SW_SHOW);
+end;
+
+end.

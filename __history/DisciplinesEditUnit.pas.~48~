@@ -1,0 +1,93 @@
+unit DisciplinesEditUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Data.DB,
+  Data.Win.ADODB, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ComCtrls,
+  System.ImageList, Vcl.ImgList;
+
+type
+  TForm7 = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    Label1: TLabel;
+    Label2: TLabel;
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
+    ADODataSet1: TADODataSet;
+    DBEdit2: TDBEdit;
+    Panel1: TPanel;
+    DBText1: TDBText;
+    StatusBar1: TStatusBar;
+    Panel2: TPanel;
+    procedure N1Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form7: TForm7;
+
+implementation
+
+{$R *.dfm}
+
+uses DisciplinesUnit, MainUnit;
+
+procedure TForm7.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+begin
+  StatusBar1.Panels[0].Text := 'Запись: ' + IntToStr(ADODataSet1.RecNo);
+end;
+
+procedure TForm7.FormActivate(Sender: TObject);
+begin
+  ADODataSet1.Active := false;
+  ADODataSet1.Active := true;
+end;
+
+procedure TForm7.FormCreate(Sender: TObject);
+begin
+  ADODataSet1.Active := true;
+end;
+
+procedure TForm7.N1Click(Sender: TObject);
+begin
+  Hide();
+  Form4.Show();
+  Form4.ADODataSet1.Refresh();
+end;
+
+procedure TForm7.N2Click(Sender: TObject);
+var
+  buttonSelected: Integer;
+begin
+
+  buttonSelected := MessageDlg('Хотите сохранить изменения?', mtCustom,
+    [mbYes, mbCancel], 0);
+
+  if (buttonSelected = mrYes) then
+  begin
+    ADODataSet1.Post();
+  end;
+
+  ToNextForm();
+end;
+
+procedure ToNextForm();
+begin
+  Form7.Hide();
+  Form4.Show();
+  Form4.ADODataSet1.Refresh();
+end;
+
+end.

@@ -1,0 +1,64 @@
+unit GroupsEditUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Vcl.ExtCtrls, Vcl.Menus, Data.DB, Data.Win.ADODB;
+
+type
+  TForm9 = class(TForm)
+    DataSource1: TDataSource;
+    ADOConnection1: TADOConnection;
+    ADODataSet1: TADODataSet;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    DBText1: TDBText;
+    DBNavigator1: TDBNavigator;
+    DBEdit2: TDBEdit;
+    procedure N1Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form9: TForm9;
+
+implementation
+
+{$R *.dfm}
+
+uses GroupsUnit;
+
+procedure TForm9.N1Click(Sender: TObject);
+begin
+  Form5.Show();
+  Hide();
+end;
+
+procedure TForm9.N2Click(Sender: TObject);
+var
+  buttonSelected: Integer;
+begin
+
+  buttonSelected := MessageDlg('Хотите сохранить изменения?', mtCustom,
+    [mbYes, mbCancel], 0);
+
+  if (buttonSelected = mrYes) then
+  begin
+    ADODataSet1.Post();
+  end;
+
+  Hide();
+  Form5.Show();
+end;
+
+end.

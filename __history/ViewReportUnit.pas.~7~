@@ -1,0 +1,27 @@
+unit ViewReportUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxClass, frxPreview, frxDBSet, ReportUnit;
+
+type
+  TForm16 = class(TForm)
+    frxPreview1: TfrxPreview;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form16: TForm16;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,85 @@
+unit Unit5;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.DBCtrls, Data.Win.ADODB, Vcl.Menus;
+
+type
+  TForm5 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    ADOConnection2: TADOConnection;
+    ADODataSet1: TADODataSet;
+    DataSource1: TDataSource;
+    DBNavigator1: TDBNavigator;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N31: TMenuItem;
+    N41: TMenuItem;
+    N9: TMenuItem;
+    procedure N2Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+Uses Unit1;
+
+procedure TForm5.N2Click(Sender: TObject);
+begin
+  Form1.Show();
+  Form5.Close();
+end;
+
+procedure TForm5.N5Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Groups ORDER BY Id';
+  ADODataset1.Open();
+end;
+
+procedure TForm5.N6Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Groups ORDER BY Id DESC';
+  ADODataset1.Open();
+end;
+
+procedure TForm5.N7Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Groups ORDER BY Name';
+  ADODataset1.Open();
+end;
+
+procedure TForm5.N8Click(Sender: TObject);
+begin
+  ADODataset1.Close();
+  ADODataset1.CommandText := 'SELECT * FROM Groups ORDER BY Name DESC';
+  ADODataset1.Open();
+end;
+
+end.

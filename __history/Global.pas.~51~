@@ -1,0 +1,29 @@
+unit Global;
+
+interface
+
+const
+  IMAGES_PATH =
+    '\..\..\source\images';
+  DATABASE_PATH =
+    '\..\..\source\db';
+  EXCEL_REPORT_PATH =
+    '\..\..\source\report\excel\';
+  WORD_REPORT_PATH =
+    '\..\..\source\report\word\';
+  WORD_TEMPLATE_STUDENTS_REPORT_PATH =
+    '\..\..\source\report\word\templates\template_students.docx';
+  WORD_TEMPLATE_GROUPS_REPORT_PATH =
+    '\..\..\source\report\word\templates\template_groups.docx';
+  WORD_TEMPLATE_DISCIPLINES_REPORT_PATH =
+    '\..\..\source\report\word\templates\template_disciplines.docx';
+  WORD_TEMPLATE_TASKS_REPORT_PATH =
+    '\..\..\source\report\word\templates\template_tasks.docx';
+  WORD_TEMPLATE_REPORTS_REPORT_PATH =
+    '\..\..\source\report\word\templates\template_reports.docx';
+  HELP_FILE =
+    '\..\..\source\help\';
+
+implementation
+
+end.

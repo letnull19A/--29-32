@@ -1,0 +1,30 @@
+unit ViewDisciplinesUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxClass, frxDBSet, frxExportRTF,
+  frxExportBaseDialog, frxExportPDF, frxPreview, DisciplinesUnit;
+
+type
+  TForm15 = class(TForm)
+    frxPreview1: TfrxPreview;
+    frxPDFExport1: TfrxPDFExport;
+    frxRTFExport1: TfrxRTFExport;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form15: TForm15;
+
+implementation
+
+{$R *.dfm}
+
+end.

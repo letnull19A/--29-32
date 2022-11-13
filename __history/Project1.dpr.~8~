@@ -1,0 +1,37 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  MainUnit in 'MainUnit.pas' {Form1},
+  StudentsUnit in 'StudentsUnit.pas' {Form2},
+  TasksUnit in 'TasksUnit.pas' {Form3},
+  DisciplinesUnit in 'DisciplinesUnit.pas' {Form4},
+  GroupsUnit in 'GroupsUnit.pas' {Form5},
+  ReportUnit in 'ReportUnit.pas' {Form6},
+  DisciplinesEditUnit in 'DisciplinesEditUnit.pas' {Form7},
+  DiscipinesAddRecordUnit in 'DiscipinesAddRecordUnit.pas' {Form8},
+  GroupsEditUnit in 'GroupsEditUnit.pas' {Form9},
+  GroupsAddRecordUnit in 'GroupsAddRecordUnit.pas' {Form10},
+  TasksEditUnit in 'TasksEditUnit.pas' {Form11},
+  Global in 'Global.pas',
+  StudentsEditUnit in 'StudentsEditUnit.pas' {Form12};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TForm5, Form5);
+  Application.CreateForm(TForm6, Form6);
+  Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TForm8, Form8);
+  Application.CreateForm(TForm9, Form9);
+  Application.CreateForm(TForm10, Form10);
+  Application.CreateForm(TForm11, Form11);
+  Application.CreateForm(TForm12, Form12);
+  Application.Run;
+end.
